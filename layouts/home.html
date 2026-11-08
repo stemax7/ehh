@@ -30,7 +30,11 @@
 <section class="extras">
   <div class="block">
     <h2>Слухи изъ типографіи</h2>
-    <p>{{ site.Params.rumors }}</p>
+    {{ range first 1 (shuffle site.Data.rumors) }}
+    <p>{{ . }}</p>
+    {{ else }}
+    <p>Слуховъ нѣтъ. Тишина подозрительная.</p>
+    {{ end }}
   </div>
 </section>
 
