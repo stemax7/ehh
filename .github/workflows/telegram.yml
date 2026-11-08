@@ -1,0 +1,21 @@
+name: Telegram
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/**'
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Автопостингъ новых матеріаловъ в канал
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: "@ekhrf"
+          BASE_URL: "https://эхъ.рф"
+        run: python .github/scripts/telegram_post.py
