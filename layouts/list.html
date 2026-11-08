@@ -1,12 +1,16 @@
 {{ define "main" }}
 <section class="rubric">
-  <h2>{{ .Title }}</h2>
+  <h1 class="rubric-title">{{ .Title }}</h1>
   {{ .Content }}
-  {{ range .Pages.ByDate.Reverse }}
+  {{ range .Pages.ByWeight }}
     <article class="item">
-      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
       <time>{{ .Date.Format "02.01.2006" }}</time>
-      <p>{{ .Summary }}</p>
+      {{ with .Description }}
+      <p class="summary">{{ . }}</p>
+      {{ else }}
+      <div class="summary">{{ $.Summary }}</div>
+      {{ end }}
     </article>
   {{ else }}
     <p class="empty">Въ этой рубрикѣ пока ни строчки.</p>

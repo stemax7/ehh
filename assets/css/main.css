@@ -33,14 +33,19 @@ body{margin:0;background:#e3d9bf;color:var(--ink);
 .columns{column-count:3;column-gap:2rem;column-rule:1px solid var(--ink);padding:1rem 0}
 .col{break-inside:avoid;margin-bottom:1rem}
 .col h3{margin:0 0 .3rem;border-bottom:1px solid var(--ink)}
-.col a,footer a{color:inherit}
 .empty{font-style:italic;opacity:.6}
 .ads{border:2px solid var(--ink);padding:.8rem 1rem;margin-top:.5rem}
 .frame,.title,.col h3,.lead h2,.ads h2,.prose h2{font-family:"Old Standard TT","PT Serif",Georgia,serif}
-.title a{text-decoration:none}
 .nav{display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem 1.2rem;
   margin-top:.8rem;padding-top:.5rem;border-top:1px solid var(--ink);font-size:.95rem}
-.nav a{color:inherit}
+/* Гиперссылки: чернильный цвет, в тексте — тонкое подчёркивание,
+   у заголовков и меню — без него, при наведении — красное */
+a{color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;
+  text-underline-offset:.18em;text-decoration-color:rgba(28,23,18,.55)}
+a:visited{color:var(--ink)}
+a:hover{color:var(--red);text-decoration-color:var(--red)}
+.title a,.nav a,.col a,.lead h2 a,.item h2 a{text-decoration:none}
+.nav a:hover,.col a:hover,.lead h2 a:hover,.item h2 a:hover{text-decoration:underline}
 .rubric,.post{padding:1rem 0}
 .item{border-bottom:1px dotted var(--ink);padding:.5rem 0}
 .prose h2 {
@@ -67,6 +72,12 @@ body{margin:0;background:#e3d9bf;color:var(--ink);
   border-bottom: 0;
 }
 time{font-size:.85rem;opacity:.7}
+.post-title,.rubric-title{font-family:"Old Standard TT","PT Serif",Georgia,serif;
+  font-size:1.7rem;text-align:center;margin:.4rem 0 .2rem;line-height:1.2}
+.post time{display:block;text-align:center;margin-bottom:1rem}
+.rubric-title{font-size:1.5rem}
+.item h2{font-size:1.1rem;margin:0}
+.summary{margin:.3rem 0}
 footer{margin-top:1rem;padding-top:.6rem;border-top:4px double var(--ink);
   text-align:center;font-size:.9rem}
 @media(max-width:700px){.columns{column-count:1}.sheet{padding:1rem}}

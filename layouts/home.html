@@ -7,7 +7,7 @@
     </div>
   {{ else }}
     <h2>Передовица</h2>
-    <p>Типографiя готовится къ работѣ. Первый выпускъ выйдетъ, какъ только накопятся безобразiя.</p>
+    <p>Типографія готовится къ работѣ. Первый выпускъ выйдетъ, какъ только накопятся безобразія.</p>
   {{ end }}
   <span class="stamp">Цензурой дозволено</span>
 </section>
@@ -16,7 +16,7 @@
   {{ range site.Sections }}
   <article class="col">
     <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-    {{ range first 3 .Pages }}
+    {{ range first 3 (where .Pages "Params.lead" "!=" true) }}
       <p><a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
     {{ else }}
       <p class="empty">Рубрика пока пуста.</p>
@@ -26,11 +26,11 @@
 </section>
 
 <aside class="ads">
-  <h2>Объявленiя</h2>
+  <h2>Объявленія</h2>
   {{ range site.Data.ads }}
     <p>{{ .text }} Обращаться: «{{ .contact }}».</p>
   {{ else }}
-    <p class="empty">Объявленiй нѣтъ.</p>
+    <p class="empty">Объявленій нѣтъ.</p>
   {{ end }}
 </aside>
 {{ end }}
