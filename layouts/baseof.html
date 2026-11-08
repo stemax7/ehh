@@ -4,6 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ if .IsHome }}{{ site.Title }} — {{ site.Params.motto }}{{ else }}{{ .Title }} — {{ site.Title }}{{ end }}</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.png" sizes="32x32">
+  <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+  <meta property="og:site_name" content="{{ site.Title }}">
+  <meta property="og:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}">
+  <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.motto }}. {{ site.Params.submotto }}{{ end }}">
+  {{ with .Params.image }}
+  <meta property="og:image" content="{{ . | absURL }}">
+  {{ else }}
+  <meta property="og:image" content="{{ "/og-cover.png" | absURL }}">
+  {{ end }}
   {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 </head>

@@ -14,6 +14,7 @@
 
 <section class="columns">
   {{ range site.Sections }}
+  {{ if .Pages }}
   <article class="col">
     <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
     {{ range first 3 (where .Pages "Params.lead" "!=" true) }}
@@ -23,11 +24,27 @@
     {{ end }}
   </article>
   {{ end }}
+  {{ end }}
+</section>
+
+<section class="extras">
+  <div class="block">
+    <h2>Погода</h2>
+    <p>{{ site.Params.weather }}</p>
+  </div>
+  <div class="block">
+    <h2>Курсъ валютъ</h2>
+    <p>{{ site.Params.rates }}</p>
+  </div>
+  <div class="block">
+    <h2>Гороскопъ</h2>
+    <p>{{ site.Params.horoscope }}</p>
+  </div>
 </section>
 
 <aside class="ads">
   <h2>Объявленія</h2>
-  {{ range site.Data.ads }}
+  {{ range first 3 (shuffle site.Data.ads) }}
     <p>{{ .text }} Обращаться: «{{ .contact }}».</p>
   {{ else }}
     <p class="empty">Объявленій нѣтъ.</p>

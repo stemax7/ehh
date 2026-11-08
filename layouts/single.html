@@ -2,6 +2,12 @@
 <article class="post">
   <h1 class="post-title">{{ .Title }}</h1>
   <time>{{ .Date.Format "02.01.2006" }}</time>
+  {{ with .Params.image }}
+  <figure>
+    <img src="{{ . }}" alt="{{ $.Title }}">
+    <figcaption>ЭХЪ.рф{{ with $.Params.ai_image }} · картинка сочинена безъ души (нейросѣть){{ end }}</figcaption>
+  </figure>
+  {{ end }}
   <div class="prose">
   {{ .Content }}
   </div>

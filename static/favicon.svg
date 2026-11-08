@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#f4ecd8"/>
+  <rect x="2" y="2" width="60" height="60" fill="none" stroke="#a3201a" stroke-width="3"/>
+  <rect x="7" y="7" width="50" height="50" fill="none" stroke="#a3201a" stroke-width="2"/>
+  <text x="32" y="45" font-family="Georgia, 'Times New Roman', serif" font-size="34"
+        font-weight="bold" fill="#a3201a" text-anchor="middle">Э</text>
+</svg>

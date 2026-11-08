@@ -1,7 +1,7 @@
 <header class="masthead">
   <div class="meta">
     <span>Нумеръ {{ site.Params.issue }}</span>
-    <span>{{ site.Params.date }}</span>
+    <span>{{ now.Format "02.01.2006" }}</span>
     <span>Цѣна: улыбка</span>
   </div>
   {{ if .IsHome }}<h1 class="title">{{ else }}<div class="title">{{ end }}

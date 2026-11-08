@@ -78,6 +78,16 @@ time{font-size:.85rem;opacity:.7}
 .rubric-title{font-size:1.5rem}
 .item h2{font-size:1.1rem;margin:0}
 .summary{margin:.3rem 0}
+figure{margin:1rem 0;text-align:center}
+figure img{max-width:100%;border:1px solid var(--ink)}
+figcaption{font-size:.85rem;font-style:italic;opacity:.75;margin-top:.3rem}
+.extras{display:flex;gap:1.5rem;border-top:1px solid var(--ink);padding:1rem 0}
+.extras .block{flex:1;border:1px solid var(--ink);padding:.6rem .8rem}
+.extras h2{font-family:"Old Standard TT","PT Serif",Georgia,serif;
+  font-size:1rem;text-transform:uppercase;letter-spacing:.08em;margin:0 0 .3rem}
+.extras p{margin:.2rem 0;font-size:.95rem}
+.lost{text-align:center;padding:2rem 0}
+.lost-link{margin-top:1.5rem}
 footer{margin-top:1rem;padding-top:.6rem;border-top:4px double var(--ink);
   text-align:center;font-size:.9rem}
-@media(max-width:700px){.columns{column-count:1}.sheet{padding:1rem}}
+@media(max-width:700px){.columns{column-count:1}.sheet{padding:1rem}.extras{flex-direction:column}}
