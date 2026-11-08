@@ -22,6 +22,10 @@ body{margin:0;background:#e3d9bf;color:var(--ink);
 .meta{display:flex;justify-content:space-between;font-size:.85rem;
   border-bottom:1px solid var(--ink);padding-bottom:.3rem;text-transform:uppercase;letter-spacing:.05em}
 .title{margin:1rem 0 .3rem}
+.title-row{display:flex;align-items:center;gap:1.5rem}
+.title-row .corner{flex:1;margin:0;font-size:.8rem;font-style:italic;line-height:1.35}
+.title-row .corner:first-child{text-align:left}
+.title-row .corner:last-child{text-align:right}
 .frame{display:inline-block;padding:.1em .5em;border:6px double var(--red);
   color:var(--red);font-size:clamp(3rem,10vw,6rem);font-weight:700;letter-spacing:.05em}
 .motto{font-style:italic;font-size:1.2rem;margin:.3rem 0 0}
@@ -90,4 +94,5 @@ figcaption{font-size:.85rem;font-style:italic;opacity:.75;margin-top:.3rem}
 .lost-link{margin-top:1.5rem}
 footer{margin-top:1rem;padding-top:.6rem;border-top:4px double var(--ink);
   text-align:center;font-size:.9rem}
-@media(max-width:700px){.columns{column-count:1}.sheet{padding:1rem}.extras{flex-direction:column}}
+@media(max-width:700px){.columns{column-count:1}.sheet{padding:1rem}.extras{flex-direction:column}
+  .title-row{flex-direction:column;gap:.3rem}.title-row .corner{text-align:center}}
