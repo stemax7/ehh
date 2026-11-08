@@ -1,6 +1,9 @@
 baseURL = 'https://эхъ.рф/'
 locale = 'ru-ru'
 title = "ЭХЪ!рф"
+
+[markup.goldmark.renderer]
+  unsafe = true
 [params]
   issue = 47
   motto = "Листокъ юмора и здраваго смысла"

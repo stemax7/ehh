@@ -1,0 +1,4 @@
+{{- $addr := .Get 0 -}}
+{{- $enc := replace $addr "@" "&#64;" -}}
+{{- $enc = replace $enc "." "&#46;" -}}
+<strong>{{ $enc | safeHTML }}</strong>
