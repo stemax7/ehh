@@ -2,6 +2,8 @@
 <article class="post">
   <h2>{{ .Title }}</h2>
   <time>{{ .Date.Format "02.01.2006" }}</time>
+  <div class="prose">
   {{ .Content }}
+  </div>
 </article>
 {{ end }}

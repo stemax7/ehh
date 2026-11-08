@@ -1,7 +1,14 @@
 {{ define "main" }}
 <section class="lead">
-  <h2>Передовица</h2>
-  <p>Типографiя готовится къ работѣ. Первый выпускъ выйдетъ, какъ только накопятся безобразiя.</p>
+  {{ with index (first 1 (where site.RegularPages "Params.lead" true)) 0 }}
+    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <div class="prose">
+  {{ .Content }}
+    </div>
+  {{ else }}
+    <h2>Передовица</h2>
+    <p>Типографiя готовится къ работѣ. Первый выпускъ выйдетъ, какъ только накопятся безобразiя.</p>
+  {{ end }}
   <span class="stamp">Цензурой дозволено</span>
 </section>
 
@@ -20,6 +27,10 @@
 
 <aside class="ads">
   <h2>Объявленiя</h2>
-  <p>Продаётся паяльникъ, почти не гудѣлъ. Обращаться: «оно само сломалось».</p>
+  {{ range site.Data.ads }}
+    <p>{{ .text }} Обращаться: «{{ .contact }}».</p>
+  {{ else }}
+    <p class="empty">Объявленiй нѣтъ.</p>
+  {{ end }}
 </aside>
 {{ end }}
