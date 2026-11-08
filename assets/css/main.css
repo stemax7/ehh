@@ -1,0 +1,27 @@
+:root{--paper:#f4ecd8;--ink:#1c1712;--red:#a3201a}
+*{box-sizing:border-box}
+body{margin:0;background:#e3d9bf;color:var(--ink);
+  font-family:"PT Serif","Old Standard TT",Georgia,"Times New Roman",serif;line-height:1.5}
+.sheet{max-width:960px;margin:1.5rem auto;padding:1.5rem 2rem;background:var(--paper);
+  border:1px solid #bfae83;box-shadow:0 2px 12px rgba(0,0,0,.25)}
+.masthead{text-align:center;border-bottom:4px double var(--ink);padding-bottom:1rem}
+.meta{display:flex;justify-content:space-between;font-size:.85rem;
+  border-bottom:1px solid var(--ink);padding-bottom:.3rem;text-transform:uppercase;letter-spacing:.05em}
+.title{margin:1rem 0 .3rem}
+.frame{display:inline-block;padding:.1em .5em;border:6px double var(--red);
+  color:var(--red);font-size:clamp(3rem,10vw,6rem);font-weight:700;letter-spacing:.05em}
+.motto{font-style:italic;font-size:1.2rem;margin:.3rem 0 0}
+.submotto{font-size:.9rem;margin:0}
+.lead{position:relative;padding:1rem 0;border-bottom:1px solid var(--ink)}
+.lead h2,.ads h2{font-size:1.3rem;text-transform:uppercase;letter-spacing:.1em;margin:0 0 .4rem}
+.stamp{display:inline-block;transform:rotate(-6deg);border:3px solid var(--red);color:var(--red);
+  padding:.2rem .6rem;font-weight:700;text-transform:uppercase;opacity:.85}
+.columns{column-count:3;column-gap:2rem;column-rule:1px solid var(--ink);padding:1rem 0}
+.col{break-inside:avoid;margin-bottom:1rem}
+.col h3{margin:0 0 .3rem;border-bottom:1px solid var(--ink)}
+.col a,footer a{color:inherit}
+.empty{font-style:italic;opacity:.6}
+.ads{border:2px solid var(--ink);padding:.8rem 1rem;margin-top:.5rem}
+footer{margin-top:1rem;padding-top:.6rem;border-top:4px double var(--ink);
+  text-align:center;font-size:.9rem}
+@media(max-width:700px){.columns{column-count:1}.sheet{padding:1rem}}

@@ -1,3 +1,8 @@
 baseURL = 'https://эхъ.рф/'
 locale = 'ru-ru'
 title = "ЭХЪ!рф"
+[params]
+  issue = 47
+  motto = "Листокъ юмора и здраваго смысла"
+  submotto = "Выходитъ по мере накопленiя безобразiй"
+  telegram = "https://t.me/ВАШ_КАНАЛ"
