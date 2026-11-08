@@ -5,11 +5,11 @@
     <span>Цѣна: улыбка</span>
   </div>
   <div class="title-row">
-    <p class="corner">{{ site.Params.weather }}</p>
+    <p class="corner"><strong>Погода</strong> {{ site.Params.weather }}</p>
     {{ if .IsHome }}<h1 class="title">{{ else }}<div class="title">{{ end }}
       <a href="/" class="frame">ЭХЪ!</a>
     {{ if .IsHome }}</h1>{{ else }}</div>{{ end }}
-    <p class="corner">{{ site.Params.rates }}</p>
+    <p class="corner"><strong>Курсъ дня</strong> {{ site.Params.rates }}</p>
   </div>
   <p class="motto">{{ site.Params.motto }}</p>
   <p class="submotto">{{ site.Params.submotto }}</p>

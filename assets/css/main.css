@@ -26,6 +26,9 @@ body{margin:0;background:#e3d9bf;color:var(--ink);
 .title-row .corner{flex:1;margin:0;font-size:.8rem;font-style:italic;line-height:1.35}
 .title-row .corner:first-child{text-align:left}
 .title-row .corner:last-child{text-align:right}
+.title-row .corner strong{display:block;font-family:"Old Standard TT","PT Serif",Georgia,serif;
+  font-style:normal;font-weight:700;font-size:.9rem;text-transform:uppercase;
+  letter-spacing:.06em;border-bottom:1px solid rgba(28,23,18,.35);padding-bottom:.15em;margin-bottom:.25em}
 .frame{display:inline-block;padding:.1em .5em;border:6px double var(--red);
   color:var(--red);font-size:clamp(3rem,10vw,6rem);font-weight:700;letter-spacing:.05em}
 .motto{font-style:italic;font-size:1.2rem;margin:.3rem 0 0}
