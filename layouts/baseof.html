@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .IsHome }}{{ site.Title }} — {{ site.Params.motto }}{{ else }}{{ .Title }} — {{ site.Title }}{{ end }}</title>
+  {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+</head>
+<body>
+<div class="sheet">
+  {{ partial "masthead.html" . }}
+  {{ block "main" . }}{{ end }}
+  {{ partial "footer.html" . }}
+</div>
+</body>
+</html>

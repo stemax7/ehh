@@ -1,54 +1,25 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ .Site.Title }} — {{ site.Params.motto }}</title>
-  {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
-</head>
-<body>
-<div class="sheet">
-  <header class="masthead">
-    <div class="meta">
-      <span>Нумеръ {{ site.Params.issue }}</span>
-      <span>{{ now.Format "02.01.2006" }}</span>
-      <span>Цѣна: улыбка</span>
-    </div>
-    <h1 class="title"><span class="frame">ЭХЪ!</span></h1>
-    <p class="motto">{{ site.Params.motto }}</p>
-    <p class="submotto">{{ site.Params.submotto }}</p>
-  </header>
+{{ define "main" }}
+<section class="lead">
+  <h2>Передовица</h2>
+  <p>Типографiя готовится къ работѣ. Первый выпускъ выйдетъ, какъ только накопятся безобразiя.</p>
+  <span class="stamp">Цензурой дозволено</span>
+</section>
 
-  <section class="lead">
-    <h2>Передовица</h2>
-    <p>Типографiя готовится къ работѣ. Первый выпускъ выйдетъ, какъ только накопятся безобразiя.</p>
-    <span class="stamp">Цензурой дозволено</span>
-  </section>
-
-  <section class="columns">
-    {{ range site.Sections }}
-    <article class="col">
-      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-      {{ range first 3 .Pages }}
-        <p><a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
-      {{ else }}
-        <p class="empty">Рубрика пока пуста.</p>
-      {{ end }}
-    </article>
+<section class="columns">
+  {{ range site.Sections }}
+  <article class="col">
+    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    {{ range first 3 .Pages }}
+      <p><a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
+    {{ else }}
+      <p class="empty">Рубрика пока пуста.</p>
     {{ end }}
-  </section>
+  </article>
+  {{ end }}
+</section>
 
-  <aside class="ads">
-    <h2>Объявленiя</h2>
-    <p>Продаётся паяльникъ, почти не гудѣлъ. Обращаться: «оно само сломалось».</p>
-  </aside>
-
-  <footer>
-    <a href="{{ site.Params.telegram }}">Telegram</a> ·
-    <a href="/index.xml">RSS</a> ·
-    <span>Типографiя: ehrf.ru</span>
-  </footer>
-</div>
-</body>
-</html>
+<aside class="ads">
+  <h2>Объявленiя</h2>
+  <p>Продаётся паяльникъ, почти не гудѣлъ. Обращаться: «оно само сломалось».</p>
+</aside>
+{{ end }}

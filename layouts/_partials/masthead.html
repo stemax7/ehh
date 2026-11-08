@@ -1,0 +1,13 @@
+<header class="masthead">
+  <div class="meta">
+    <span>Нумеръ {{ site.Params.issue }}</span>
+    <span>{{ now.Format "02.01.2006" }}</span>
+    <span>Цѣна: улыбка</span>
+  </div>
+  <h1 class="title"><a href="/" class="frame">ЭХЪ!</a></h1>
+  <p class="motto">{{ site.Params.motto }}</p>
+  <p class="submotto">{{ site.Params.submotto }}</p>
+  <nav class="nav">
+    {{ range site.Sections }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+  </nav>
+</header>

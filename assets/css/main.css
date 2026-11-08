@@ -1,3 +1,17 @@
+@font-face{font-family:"PT Serif";font-weight:400;font-style:normal;font-display:swap;
+  src:url("/fonts/PTSerif-Regular.woff2") format("woff2")}
+@font-face{font-family:"PT Serif";font-weight:400;font-style:italic;font-display:swap;
+  src:url("/fonts/PTSerif-Italic.woff2") format("woff2")}
+@font-face{font-family:"PT Serif";font-weight:700;font-style:normal;font-display:swap;
+  src:url("/fonts/PTSerif-Bold.woff2") format("woff2")}
+@font-face{font-family:"PT Serif";font-weight:700;font-style:italic;font-display:swap;
+  src:url("/fonts/PTSerif-BoldItalic.woff2") format("woff2")}
+  @font-face{font-family:"Old Standard TT";font-weight:400;font-style:normal;font-display:swap;
+  src:url("/fonts/OldStandardTT-Regular.woff2") format("woff2")}
+@font-face{font-family:"Old Standard TT";font-weight:400;font-style:italic;font-display:swap;
+  src:url("/fonts/OldStandardTT-Italic.woff2") format("woff2")}
+@font-face{font-family:"Old Standard TT";font-weight:700;font-style:normal;font-display:swap;
+  src:url("/fonts/OldStandardTT-Bold.woff2") format("woff2")}
 :root{--paper:#f4ecd8;--ink:#1c1712;--red:#a3201a}
 *{box-sizing:border-box}
 body{margin:0;background:#e3d9bf;color:var(--ink);
@@ -22,6 +36,14 @@ body{margin:0;background:#e3d9bf;color:var(--ink);
 .col a,footer a{color:inherit}
 .empty{font-style:italic;opacity:.6}
 .ads{border:2px solid var(--ink);padding:.8rem 1rem;margin-top:.5rem}
+.frame,.title,.col h3,.lead h2,.ads h2{font-family:"Old Standard TT","PT Serif",Georgia,serif}
+.title a{text-decoration:none}
+.nav{display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem 1.2rem;
+  margin-top:.8rem;padding-top:.5rem;border-top:1px solid var(--ink);font-size:.95rem}
+.nav a{color:inherit}
+.rubric,.post{padding:1rem 0}
+.item{border-bottom:1px dotted var(--ink);padding:.5rem 0}
+time{font-size:.85rem;opacity:.7}
 footer{margin-top:1rem;padding-top:.6rem;border-top:4px double var(--ink);
   text-align:center;font-size:.9rem}
 @media(max-width:700px){.columns{column-count:1}.sheet{padding:1rem}}
