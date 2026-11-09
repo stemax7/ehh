@@ -58,9 +58,12 @@ body{margin:0;min-height:100vh;color:var(--ink);
 .submotto{font-size:.9rem;margin:0}
 .lead{position:relative;padding:1rem 0;border-bottom:1px solid var(--ink)}
 .lead h2,.ads h2{font-size:1.3rem;text-transform:uppercase;letter-spacing:.1em;margin:0 0 .4rem}
-/* Вотермаркъ «Цензурою дозволено» вмѣсто штампа */
+/* Вотермаркъ «Цензурою дозволено» вмѣсто штампа: титулъ всегда,
+   внутреннія страницы — по особому вызову (front matter: watermark: true) */
 .watermark{position:absolute;right:1rem;bottom:.6rem;width:clamp(8rem,22vw,13rem);
-  transform:rotate(-8deg);opacity:.55;pointer-events:none;z-index:0}
+  transform:rotate(-8deg);opacity:.8;pointer-events:none;z-index:0}
+.post{position:relative}
+.post .watermark{top:1.5rem;bottom:auto}
 .lead h2,.lead .prose{position:relative;z-index:1}
 .columns{column-count:3;column-gap:2rem;column-rule:1px solid var(--ink);padding:1rem 0}
 .col{break-inside:avoid;margin-bottom:1rem}

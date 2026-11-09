@@ -1,5 +1,8 @@
 {{ define "main" }}
 <article class="post">
+  {{ if .Params.watermark }}
+  <img class="watermark" src="/img/stamp-dozvoleno.svg" alt="" width="600" height="600">
+  {{ end }}
   <h1 class="post-title">{{ .Title }}</h1>
   {{ if not .Params.hide_date }}<time>{{ .Date.Format "02.01.2006" }}</time>{{ end }}
   {{ with .Params.image }}
