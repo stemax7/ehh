@@ -36,7 +36,7 @@ body{margin:0;min-height:100vh;color:var(--ink);
     url("/img/paper-tile.webp");
   background-repeat:no-repeat,no-repeat,repeat;
   background-size:100% 100%,100% 100%,512px 512px;
-  font-family:"Oranienbaum","PT Serif","Old Standard TT",Georgia,"Times New Roman",serif;line-height:1.5}
+  font-family:"PT Serif","Old Standard TT",Georgia,"Times New Roman",serif;line-height:1.5}
 .sheet{max-width:960px;margin:0 auto;padding:1.5rem 2rem;
   /* поле под текстом ровнее и светлее, края колонки растворяются в бумаге */
   background:linear-gradient(90deg,rgba(243,233,204,0) 0,rgba(243,233,204,.7) 2rem,
