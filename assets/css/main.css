@@ -60,8 +60,8 @@ body{margin:0;min-height:100vh;color:var(--ink);
 .lead h2,.ads h2{font-size:1.3rem;text-transform:uppercase;letter-spacing:.1em;margin:0 0 .4rem}
 /* Вотермаркъ «Цензурою дозволено» вмѣсто штампа: титулъ всегда,
    внутреннія страницы — по особому вызову (front matter: watermark: true) */
-.watermark{position:absolute;right:1rem;bottom:.6rem;width:clamp(8rem,22vw,13rem);
-  transform:rotate(-8deg);opacity:.8;pointer-events:none;z-index:0}
+.watermark{position:absolute;right:1rem;top:33.333%;width:clamp(8rem,22vw,13rem);
+  transform:translateY(-50%) rotate(-8deg);opacity:.8;pointer-events:none;z-index:0}
 .post{position:relative}
 .post .watermark{top:1.5rem;bottom:auto}
 .lead h2,.lead .prose{position:relative;z-index:1}
