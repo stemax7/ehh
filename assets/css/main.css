@@ -24,7 +24,7 @@
   src:url("/fonts/AlegreyaSC-Bold.woff2") format("woff2")}
 @font-face{font-family:"Alegreya SC";font-weight:700;font-style:italic;font-display:swap;
   src:url("/fonts/AlegreyaSC-BoldItalic.woff2") format("woff2")}
-:root{--paper:#f3e9cc;--ink:#1c1a17;--red:#a3201a}
+:root{--paper:#f3e9cc;--ink:#1c1a17;--red:#c3261c}
 *{box-sizing:border-box}
 /* Бумага: основа + светлое поле сверху + потемнение к краям + тайл (зерно, вкрапления, волокна) */
 html{min-height:100%;background-color:#f0e4c4}
@@ -36,7 +36,7 @@ body{margin:0;min-height:100vh;color:var(--ink);
     url("/img/paper-tile.webp");
   background-repeat:no-repeat,no-repeat,repeat;
   background-size:100% 100%,100% 100%,512px 512px;
-  font-family:"PT Serif","Old Standard TT",Georgia,"Times New Roman",serif;line-height:1.5}
+  font-family:"Oranienbaum","PT Serif","Old Standard TT",Georgia,"Times New Roman",serif;line-height:1.5}
 .sheet{max-width:960px;margin:0 auto;padding:1.5rem 2rem;
   /* поле под текстом ровнее и светлее, края колонки растворяются в бумаге */
   background:linear-gradient(90deg,rgba(243,233,204,0) 0,rgba(243,233,204,.7) 2rem,
@@ -51,31 +51,33 @@ body{margin:0;min-height:100vh;color:var(--ink);
 .title-row .corner:last-child{text-align:right}
 .title-row .corner strong{display:block;font-family:"Old Standard TT","PT Serif",Georgia,serif;
   font-style:normal;font-weight:700;font-size:.9rem;text-transform:uppercase;
-  letter-spacing:.06em;border-bottom:1px solid rgba(28,23,18,.35);padding-bottom:.15em;margin-bottom:.25em}
+  letter-spacing:.06em;border-bottom:1px solid rgba(28,26,23,.35);padding-bottom:.15em;margin-bottom:.25em}
 .logo{display:inline-block;line-height:0}
 .logo img{display:block;width:clamp(11rem,30vw,17rem);height:auto}
 .motto{font-style:italic;font-size:1.2rem;margin:.3rem 0 0}
 .submotto{font-size:.9rem;margin:0}
 .lead{position:relative;padding:1rem 0;border-bottom:1px solid var(--ink)}
 .lead h2,.ads h2{font-size:1.3rem;text-transform:uppercase;letter-spacing:.1em;margin:0 0 .4rem}
-.stamp{display:inline-block;transform:rotate(-6deg);border:3px solid var(--red);color:var(--red);
-  padding:.2rem .6rem;font-family:"Alegreya SC","PT Serif",serif;font-weight:700;
-  text-transform:uppercase;letter-spacing:.08em;opacity:.85}
+/* Вотермаркъ «Цензурою дозволено» вмѣсто штампа */
+.watermark{position:absolute;right:1rem;bottom:.6rem;width:clamp(8rem,22vw,13rem);
+  transform:rotate(-8deg);opacity:.55;pointer-events:none;z-index:0}
+.lead h2,.lead .prose{position:relative;z-index:1}
 .columns{column-count:3;column-gap:2rem;column-rule:1px solid var(--ink);padding:1rem 0}
 .col{break-inside:avoid;margin-bottom:1rem}
 .col h3{margin:0 0 .3rem;border-bottom:1px solid var(--ink)}
 .empty{font-style:italic;opacity:.6}
-.ads{border:2px solid var(--ink);padding:.8rem 1rem;margin-top:.5rem;
-  font-family:"Alegreya SC","PT Serif",serif;letter-spacing:.02em}
+.ads{border:2px solid var(--ink);padding:.8rem 1rem;margin-top:.5rem}
 .title,.lead h2,.ads h2,.prose h2{font-family:"Old Standard TT","PT Serif",Georgia,serif}
 /* Подзаголовки — рабочій Oranienbaum */
 .col h3{font-family:"Oranienbaum","Old Standard TT",serif;font-size:1.15rem;letter-spacing:.04em}
+/* Формальные заявленія — Alegreya SC (напримѣръ, «О редакцiи») */
+.prose.formal{font-family:"Alegreya SC","PT Serif",serif;letter-spacing:.02em}
 .nav{display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem 1.2rem;
   margin-top:.8rem;padding-top:.5rem;border-top:1px solid var(--ink);font-size:.95rem}
 /* Гиперссылки: чернильный цвет, в тексте — тонкое подчёркивание,
    у заголовков и меню — без него, при наведении — красное */
 a{color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;
-  text-underline-offset:.18em;text-decoration-color:rgba(28,23,18,.55)}
+  text-underline-offset:.18em;text-decoration-color:rgba(28,26,23,.55)}
 a:visited{color:var(--ink)}
 a:hover{color:var(--red);text-decoration-color:var(--red)}
 .title a,.nav a,.col a,.lead h2 a,.item h2 a{text-decoration:none}

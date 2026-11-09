@@ -3,6 +3,7 @@ title: "О редакцiи"
 date: 2026-11-08
 url: /o-redaktsii/
 hide_date: true
+formal: true
 description: "Легенда листка, состав редакціи, переписка и слово о совпаденіяхъ."
 ---
 
