@@ -7,7 +7,7 @@
   <div class="title-row">
     <p class="corner"><strong>Погода</strong> {{ site.Params.weather }}</p>
     {{ if .IsHome }}<h1 class="title">{{ else }}<div class="title">{{ end }}
-      <a href="/" class="frame">ЭХЪ!</a>
+      <a href="/" class="logo"><img src="/img/logo.svg" alt="ЭХЪ!" width="639" height="330"></a>
     {{ if .IsHome }}</h1>{{ else }}</div>{{ end }}
     <p class="corner"><strong>Курсъ дня</strong> {{ site.Params.rates }}</p>
   </div>
