@@ -129,5 +129,7 @@ figcaption{font-size:.85rem;font-style:italic;opacity:.75;margin-top:.3rem}
 .lost-link{margin-top:1.5rem}
 footer{margin-top:1rem;padding-top:.6rem;border-top:4px double var(--ink);
   text-align:center;font-size:.9rem}
+.tirazh{display:block;margin-top:.35rem;font-size:.8rem;opacity:.75;
+  visibility:hidden}
 @media(max-width:700px){.columns{column-count:1}.sheet{padding:1rem}.extras{flex-direction:column}
   .title-row{flex-direction:column;gap:.3rem}.title-row .corner{text-align:center}}

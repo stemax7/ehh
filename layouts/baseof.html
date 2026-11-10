@@ -24,5 +24,24 @@
   {{ block "main" . }}{{ end }}
   {{ partial "footer.html" . }}
 </div>
+{{ if not hugo.IsServer }}
+<script data-goatcounter="{{ site.Params.goatcounter }}"
+  async src="//stats.ehrf.ru/count.js"></script>
+<script>
+// Тиражъ: общее число просмотровъ (кэшъ счётчика — до четырёхъ часовъ).
+fetch('{{ site.Params.goatcounter | replace "/count" "/counter/TOTAL.json" }}')
+  .then(function (r) { return r.json() })
+  .then(function (d) {
+    var n = parseInt(d.count, 10);
+    if (isNaN(n)) return;
+    document.querySelectorAll('.tirazh-n').forEach(function (el) {
+      el.textContent = n.toLocaleString('ru-RU');
+    });
+    var t = document.querySelector('.tirazh');
+    if (t) t.style.visibility = 'visible';
+  })
+  .catch(function () { /* счётчикъ недоступенъ — тиражъ не выводимъ */ });
+</script>
+{{ end }}
 </body>
 </html>
