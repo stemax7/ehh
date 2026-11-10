@@ -26,10 +26,10 @@
 </div>
 {{ if not hugo.IsServer }}
 <script data-goatcounter="{{ site.Params.goatcounter }}"
-  async src="//stats.ehrf.ru/count.js"></script>
+  async src="//gc.zgo.at/count.js"></script>
 <script>
 // Тиражъ: общее число просмотровъ (кэшъ счётчика — до четырёхъ часовъ).
-fetch('{{ site.Params.goatcounter | replace "/count" "/counter/TOTAL.json" }}')
+fetch('{{ replace site.Params.goatcounter "/count" "/counter/TOTAL.json" }}')
   .then(function (r) { return r.json() })
   .then(function (d) {
     var n = parseInt(d.count, 10);
