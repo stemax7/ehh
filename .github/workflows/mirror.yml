@@ -1,0 +1,24 @@
+name: Зеркало на GitVerse
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # подстраховка раз в 6 часов (на случай пропущенных событий)
+    - cron: '23 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Отправить зеркало на GitVerse
+        run: |
+          git remote add gitverse "https://oauth2:${GITVERSE_TOKEN}@gitverse.ru/stemax/ehh.git"
+          git push gitverse main:main --tags --force
+        env:
+          GITVERSE_TOKEN: ${{ secrets.GITVERSE_TOKEN }}
